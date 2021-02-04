@@ -47,7 +47,6 @@ class AdminLoginControllerTest extends TestCase
                 'email' => 'nonexisting@gmail.com',
                 'password' => 'nnn111'
             ])
-            ->dump()
             ->assertJson([
                'errors' => [
                    'email' => ['These credentials do not match our records.']
