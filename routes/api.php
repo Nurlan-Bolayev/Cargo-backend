@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+//Route::get('/email/verify/{id}/{hash}', UserController::class . '@verifyEmail')
+//    ->middleware(['signed'])->name('verification.notice');
+
+Route::middleware('auth:api')->group(function () {
+    Route::get('users/me', fn(Request $request) => $request->user());
 });
+
+Route::post('/letters/letter', UserController::class . '@addAttorneyLetter');

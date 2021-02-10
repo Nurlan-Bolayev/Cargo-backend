@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('api/admin/login', AdminLoginController::class .'@login');
+
 Route::post('api/register', UserController::class.'@register');
-Route::post('api/login', UserController::class.'@login');
+Route::post('api/login',UserController::class .'@login');
+Route::get('api/logout', UserController::class .'@logout');
+
+
+Route::post('api/admin/login', AdminController::class .'@login');
+Route::post('api/admin/logout', AdminController::class .'@logout');

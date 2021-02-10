@@ -3,12 +3,10 @@
 namespace Tests\Feature;
 
 use App\Models\Admin\Admin;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
-class AdminLoginControllerTest extends TestCase
+class AdminControllerTest extends TestCase
 {
     public function test_admin_logs_in()
     {
