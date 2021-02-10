@@ -19,4 +19,5 @@
 
 3. Run `composer install`
 4. Run `php artisan migrate:refresh --seed`
-5. Run `php artisan serve`
+5. Run `php artisan key:generate`
+6. Run `php artisan serve`
