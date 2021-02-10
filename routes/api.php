@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/email/verify/{id}/{hash}', UserController::class . '@verifyEmail')
-//    ->middleware(['signed'])->name('verification.notice');
-
 Route::middleware('auth:api')->group(function () {
     Route::get('users/me', fn(Request $request) => $request->user());
 });
